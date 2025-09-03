@@ -82,7 +82,12 @@ class ActorGenericAPIView(
 
 
 class CinemaHallViewSet(
-    viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin
+    viewsets.GenericViewSet,
+    mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin
 ):
     queryset = CinemaHall.objects.all()
     serializer_class = CinemaHallSerializer
